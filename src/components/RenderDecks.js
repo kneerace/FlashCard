@@ -26,7 +26,7 @@ function RenderDecks(){
                     <div className="card-body">
                         <div className="d-flex justify-content-between">
                             {/* deck title */}
-                            <h4 className="card-title">{deck.name}</h4>
+                            <h5 className="card-title">{deck.name}</h5>
                             {/* cards number in a deck */}
                             <p>{`${cards.length} cards`}</p>
                         </div>
@@ -35,7 +35,7 @@ function RenderDecks(){
                         <div className="d-flex justify-content-between">
                             <div>
                                 <Link to={`decks/${deck.id}`} className='btn btn-secondary'>View</Link>
-                                <Link to={`decks/${deck.id}/study`} className='btn btn-primary'>Study</Link>
+                                <Link to={`decks/${deck.id}/study`} className='btn btn-primary ml-1'>Study</Link>
                             </div>
                             <div>
                                 <button className='btn btn-danger'>Delete</button>
