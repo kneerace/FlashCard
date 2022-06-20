@@ -8,18 +8,18 @@ function RenderDecks(){
     const [decks, setDecks]=useState([]);
     const history = useHistory();
 
-    const controller = new AbortController();
+
     //Fetching Decks
     useEffect(()=>{
         async function fetchDecks() {
-                const response = await listDecks(controller.signal);
-                setDecks(response);
+                const response = await listDecks();
+                await setDecks(response);
                 }
         fetchDecks();
     }, []);
 
     console.log(decks);
-    
+
     // Mapping each deck from the response
     const deckList = decks.map((deck)=>{
         const cards = deck.cards;
