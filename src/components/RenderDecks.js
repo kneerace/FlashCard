@@ -8,12 +8,13 @@ function RenderDecks(){
     const [decks, setDecks]=useState([]);
     const history = useHistory();
 
-
+    console.log("RenderDecks", decks)
     //Fetching Decks
     useEffect(()=>{
         async function fetchDecks() {
                 const response = await listDecks();
-                await setDecks(response);
+                setDecks(response);
+                console.log("RenderDeck response: ", response)
                 }
         fetchDecks();
     }, []);

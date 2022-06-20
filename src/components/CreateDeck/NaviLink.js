@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-function CreateDeck(){
+function NaviLink(){
     return(
         <nav >
             <ol className="breadcrumb">
@@ -12,4 +12,4 @@ function CreateDeck(){
     )
 }
 
-export default CreateDeck;
+export default NaviLink;

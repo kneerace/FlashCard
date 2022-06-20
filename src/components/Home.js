@@ -1,6 +1,6 @@
 import React from "react";
-import CreateDeckButton from "./../components/CreateDeckButton"
-import RenderDecks from "./../components/RenderDecks"
+import CreateDeckButton from "./../components/CreateDeckButton";
+import RenderDecks from "./../components/RenderDecks";
 
 function Home(){
     return(
