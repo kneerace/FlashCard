@@ -1,15 +1,15 @@
 import React from "react";
-import CreateDeckForm from "./../CreateDeck/CreateDeckForm";
-import NaviLink from "./../CreateDeck/NaviLink";
+import {Link} from "react-router-dom";
 
 function CreateDeck(){
-    return(
-        <div>
-            <NaviLink />
-            <h1>Create Deck</h1>
-            <CreateDeckForm />
-        </div>
-    )
-}
-
+        return(
+            <nav >
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item active">Create Deck</li>
+                </ol>
+            </nav>
+        )
+    }
+    
 export default CreateDeck;

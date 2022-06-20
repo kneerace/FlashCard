@@ -5,7 +5,7 @@ import {deleteDeck, listDecks} from "./../utils/api/index";
 
 function RenderDecks(){
     // setting up deck, default as blank Array
-    const [decks, setDecks]=useState([]);
+    const [decks, setDecks] = useState([]);
     const history = useHistory();
 
     console.log("RenderDecks", decks)
@@ -13,7 +13,7 @@ function RenderDecks(){
     useEffect(()=>{
         async function fetchDecks() {
                 const response = await listDecks();
-                setDecks(response);
+                await setDecks(response);
                 console.log("RenderDeck response: ", response)
                 }
         fetchDecks();
@@ -26,6 +26,7 @@ function RenderDecks(){
         const cards = deck.cards;
     
         const deleteHandler = (event)=>{
+            event.preventDefault();
             if(window.confirm(`Are you sure to delete this Deck? \n\nYou will not be able to recover it.`)){
                 deleteDeck(deck.id);
                 
