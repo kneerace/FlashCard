@@ -19,24 +19,23 @@ function DisplayCards({deckID}){
 
     // console.log("DisplayCards cards: ", cards);
     const handleDelete =(event)=>{
-        console.log('DisplayCards event.target', event.target);
+        // console.log('DisplayCards event.target', event.target);
+        const cardid = event.target.id;
         if(window.confirm("Delete thi card?\n\nYou will not be able to recover it.")){
             deleteCard(event.target.id);
-           const newCards = cards.filter((card)=> 
-            {
-                // card.id !== event.target.id
-                return (card.id!==event.target.id)
-            });
-            console.log('1 cards', cards, ' newCards:', newCards, ' : ', event.target.id);
-            // setCards(newCards);
-            deckID = deckID;
+            const newCards = cards.filter((item)=> item.id != cardid);
+            setCards(newCards);
+            // setCards(current=> {
+            //     return current.filter((item)=>item.id != cardid)
+            // })
+            // console.log('cards::::', cards);
             history.push(`${url}`);
-            console.log('2 cards', cards, ' newCards:', newCards, ' url: ',url);
+           
         }
 
     }
     if(cards) {
-        console.log("DisplayCard inside if for return", cards);
+        // console.log("DisplayCard inside if for return", cards);
         return(
             cards.map((card)=>{
                 return(
@@ -48,7 +47,7 @@ function DisplayCards({deckID}){
                                     <p className="card-text bg">{card.back}</p>
                                 {/* </div> */}
                                 <div className="d-flex justify-content-end">
-                                    <Link to="" className="btn btn-secondary mr-1">Edit</Link>
+                                    <Link to={`${url}/cards/${card.id}/edit`} className="btn btn-secondary mr-1">Edit</Link>
                                     <button className="btn btn-danger" id={card.id} onClick={handleDelete}>Delete</button>
                                 </div>
                             </div>
