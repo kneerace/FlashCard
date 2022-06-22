@@ -1,25 +1,31 @@
-import React, {useState, UseEffect, useEffect} from "react";
+import React from "react";
 import {Link, useHistory} from "react-router-dom";
-import {deleteDeck, listDecks} from "./../utils/api/index";
+import {deleteDeck} from "./../utils/api/index";
 
 
-function RenderDecks(){
-    // setting up deck, default as blank Array
-    const [decks, setDecks] = useState([]);
+function RenderDecks({decks}){
+    // // setting up deck, default as blank Array
+    // const [decks, setDecks] = useState([]);
     const history = useHistory();
 
-    console.log("RenderDecks", decks)
-    //Fetching Decks
-    useEffect(()=>{
-        async function fetchDecks() {
-                const response = await listDecks();
-                await setDecks(response);
-                console.log("RenderDeck response: ", response)
-                }
-        fetchDecks();
-    }, []);
+    // console.log("RenderDecks", decks)
 
-    console.log(decks);
+    // const abort = new AbortController;
+    // //Fetching Decks
+    // useEffect(()=>{
+    //     async function fetchDecks() {
+    //         try{
+    //             const response = await listDecks(abort.signal);
+    //             await setDecks(response);
+    //             console.log("RenderDeck response: ", response)
+    //         }catch(err){
+    //             console.log('Error: ', err); //-------TODO 
+    //         }
+    //             }
+    //     fetchDecks();
+    // }, []);
+
+    // console.log(decks);
 
     // Mapping each deck from the response
     const deckList = decks.map((deck)=>{
@@ -31,8 +37,8 @@ function RenderDecks(){
                 deleteDeck(deck.id);
                 
                 const newDeck = decks.filter((deckitem)=> deckitem.id !== deck.id);
-                console.log('newDeck', newDeck);
-                setDecks(newDeck);
+                // console.log('newDeck', newDeck);
+                // setDecks(newDeck);
             }
             history.go(0);
         }
