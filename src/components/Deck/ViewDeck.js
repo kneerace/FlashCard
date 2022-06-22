@@ -7,7 +7,7 @@ function ViewDeck(){
     const {deckID} = useParams();
     // console.log("ViewDeck deckID: ", deckID);
     const history = useHistory();
-    const {url, path} = useRouteMatch();
+    const {url} = useRouteMatch();
 
     const [deck, setDeck] = useState(null);
 
