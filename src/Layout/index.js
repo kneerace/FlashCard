@@ -45,12 +45,13 @@ function Layout() {
           <Route path="/decks/new" >
             <CreateDeck decks={decks}/>
           </Route>
-          <Route path="/decks/:deckID" >
-            <ViewDeck />
-          </Route>
           <Route path="/decks/:deckID/edit">
             <EditDeck />
           </Route>
+          <Route path="/decks/:deckID" >
+            <ViewDeck />
+          </Route>
+          
           <Route>
             <NotFound />
           </Route>
