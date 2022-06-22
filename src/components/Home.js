@@ -2,11 +2,11 @@ import React from "react";
 import CreateDeckButton from "./../components/CreateDeckButton";
 import RenderDecks from "./../components/RenderDecks";
 
-function Home(){
+function Home({decks}){
     return(
         <div className="container">
       <CreateDeckButton />
-      <RenderDecks />
+      <RenderDecks decks={decks}/>
     </div>
     )
 }
