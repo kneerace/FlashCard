@@ -35,8 +35,7 @@ function RenderDecks({decks}){
             event.preventDefault();
             if(window.confirm(`Are you sure to delete this Deck? \n\nYou will not be able to recover it.`)){
                 deleteDeck(deck.id);
-                
-                const newDeck = decks.filter((deckitem)=> deckitem.id !== deck.id);
+                // const newDeck = decks.filter((deckitem)=> deckitem.id !== deck.id);
                 // console.log('newDeck', newDeck);
                 // setDecks(newDeck);
             }
