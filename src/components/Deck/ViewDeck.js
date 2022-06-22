@@ -36,9 +36,21 @@ function ViewDeck(){
         
     }
 
+    const ViewDeckNaviLink = ()=>{
+        return(
+            <nav aria-label="breadcurmb">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item">{deck.name}</li>
+            </ol>
+        </nav>
+        )
+    }
+
     if(deck){
     return(
         <>
+        <ViewDeckNaviLink />
             <div className="col-sm-12 p-0">
                 <div className="card">
                     <div className="card-body">
@@ -46,9 +58,9 @@ function ViewDeck(){
                         <p className="card-text">{deck.description}</p>
                         <div className="d-flex justify-content-between">
                             <div>
-                                <Link to="" className="btn btn-secondary mr-1">Edit</Link>
-                                <Link to="" className="btn btn-primary mr-1">Study</Link>
-                                <Link to="" className="btn btn-primary mr-1"><span style={{fontSize:18}}><strong>+</strong> </span>Add Cards</Link>
+                                <Link to={`${url}/edit`} className="btn btn-secondary mr-1">Edit</Link>
+                                <Link to={`${url}/study`} className="btn btn-primary mr-1">Study</Link>
+                                <Link to={`${url}/cards/new`} className="btn btn-primary mr-1"><span style={{fontSize:18}}><strong>+</strong> </span>Add Cards</Link>
                             </div>
                             <div>
                                 <button className="btn btn-danger" onClick={deleteDeckHandler}>Delete</button>
