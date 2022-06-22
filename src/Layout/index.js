@@ -15,7 +15,7 @@ function Layout() {
     const [decks, setDecks] = useState([]);
 
     const abort = new AbortController();
-    const {path, url} = useRouteMatch();
+    const {url} = useRouteMatch();
     // console.log('Layout index path: ', path, ' url:', url)
 
     //Fetching Decks
@@ -30,7 +30,7 @@ function Layout() {
             }
                 }
         fetchDecks();
-    }, [`{$url}`]);
+    }, [`${url}`]);
 
 
   return (
