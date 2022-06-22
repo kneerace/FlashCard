@@ -6,6 +6,7 @@ import Home from "../components/Home"
 import CreateDeck from "./../components/CreateDeck/CreateDeck";
 import ViewDeck from "../components/Deck/ViewDeck"
 import {listDecks} from "./../utils/api/index";
+import EditDeck from "../components/Deck/EditDeck";
 
 
 function Layout() {
@@ -46,6 +47,9 @@ function Layout() {
           </Route>
           <Route path="/decks/:deckID" >
             <ViewDeck />
+          </Route>
+          <Route path="/decks/:deckID/edit">
+            <EditDeck />
           </Route>
           <Route>
             <NotFound />
