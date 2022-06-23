@@ -1,0 +1,54 @@
+import React, { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { createCard } from "../../utils/api";
+
+function AddCardForm({deck}){
+
+        // console.log("AddCardForm deck::prop:: ",deck);
+    const history = useHistory();
+    const {deckID} = useParams();
+    const [front, setFront] = useState({"front":""})
+    const [back, setBack] = useState({"back":""});
+
+    const handleFront = (event) =>{
+        event.preventDefault();
+        setFront({"front":event.target.value});
+    }
+
+    const handleBack = (event) =>{
+        setBack({"back":event.target.value});
+
+    }
+
+    const handleSave = () =>{
+        createCard(deckID, {...front, ...back});
+        setFront({"front":""})
+        setBack({"back":""})
+    }
+
+    const handleDone = () =>{
+        history.push(`/decks/${deckID}`);
+    }
+
+
+    return(
+        <>
+            <form>
+                <div className="form-group">
+                    <label htmlFor="front">Front</label>
+                    <textarea className="form-control" id='front' rows="3" placeholder="Front side of card"
+                        value={front.front} onChange={handleFront}></textarea>
+                </div>
+                <div className="form-group">
+                <label htmlFor="back">Back</label>
+                    <textarea className="form-control" id='back' rows="3" placeholder="Back side of card"
+                        value={back.back} onChange={handleBack}></textarea>
+                </div>
+                <button className="btn btn-secondary mr-1" onClick={handleDone}>Done</button>
+                <button className="btn btn-primary" onClick={handleSave}>Save</button>
+            </form>
+        </>
+    )
+}
+
+export default AddCardForm;
