@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { readDeck } from "../../utils/api";
+import StudyCards from "../Card/StudyCards";
 
 
 function StudyDeck(){
@@ -12,47 +13,36 @@ function StudyDeck(){
 
     useEffect(()=>{
         async function getDeck(){
+            try{
             const response = await readDeck(deckID);
             setDeck(response)
-                console.log("StudyDeck readDeck response::: ", response);
+                // console.log("StudyDeck readDeck response::: ", response);
             // const allCards = deck.cards;
         }
+        catch(e){ console.log("StudyDeck GetDeck Error:: ", e)}
+    }
         getDeck();
-    },[deckID]);
+    },[deckID]);    
 
-        // console.log("StudyDeck deck::: ", deck);
-        // console.log("StudyDeck deck.cards::: ", deck.cards);
-        // console.log("StudyDeck deck.cards::: ", deck.cards);
-
-
-    
-    const [front, setFront] = useState(true);
-
-    const handleFlip =(side)=>  setFront(!side) ;
-
-    const StudyDeckNaviLink =()=>{
-        return(
-            <nav aria-label="breadcurmb">
-            <ol className="breadcrumb">
-                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                <li className="breadcrumb-item"><Link to={`/decks/${deckID}`}>{deck.name}</Link></li>
-                <li className="breadcrumb-item active">Study</li>
-            </ol>
-        </nav>
-        )
-    }
-
-    function cardsAtaTime(){
-            // if(allCards.length <3){
-                // return <NotEnoughCards allCards={allCards} />
-            // }
-    }
     if(deck){
+        
+        const StudyDeckNaviLink =({deck})=>{
+            return(
+                <nav aria-label="breadcurmb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to={`/decks/${deckID}`}>{deck.name}</Link></li>
+                    <li className="breadcrumb-item active">Study</li>
+                </ol>
+            </nav>
+            )
+        }
+    
     return(
         <>
-        < StudyDeckNaviLink />
+        < StudyDeckNaviLink deck={deck}/>
         <h1>{`Study: ${deck.name}`}</h1>
-        
+        <StudyCards deck={deck} />
         </>
     )
     }
