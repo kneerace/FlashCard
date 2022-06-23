@@ -1,11 +1,30 @@
-import React, { useState } from "react";
-import {useHistory} from "react-router-dom";
-import { createDeck, listDecks } from "../../utils/api";
+import React, { useEffect, useState } from "react";
+import {useHistory, useLocation} from "react-router-dom";
+import { createDeck, listDecks, updateDeck } from "../../utils/api";
 
-function CreateDeckForm({decks}){
+function CreateDeckForm({deck}){
+    const {pathname}= useLocation();
+        // console.log('CreateDeckForm pathname:', pathname);
+        // console.log('CreateDeckForm initial deck:', deck);
     const history = useHistory();
+    
+    const [editFlag, setEditFlag] = useState(true);
     const [name, setName]=useState({"name":""});
     const [description, setDecription] = useState({"description":""});
+
+    useEffect(()=>{
+        function editflag(){
+            if(pathname.includes("edit")){
+                setName({"name":deck.name});
+                setDecription({"description":deck.description});
+            }
+            else{
+                setEditFlag(false);
+            }
+        }
+        editflag();
+    },[deck, pathname]);
+    
 
     const handleName = (event)=>{
         setName({...name, "name": event.target.value});
@@ -13,7 +32,6 @@ function CreateDeckForm({decks}){
 
     const handleDecription = (event)=>{
         setDecription({...description, "description": event.target.value});
-
     }
 
     const handleCancel =(event)=>{
@@ -25,14 +43,24 @@ function CreateDeckForm({decks}){
         try{
         await createDeck({...name, ...description});
         const response = await listDecks();
-        // console.log("CreateDeckForm response: ", response);
+             // console.log("CreateDeckForm response: ", response);
         const latestDeckId = Math.max(...response.map(deck => deck.id));
-        // console.log('latestDeckID: ', latestDeckId);
+            // console.log('latestDeckID: ', latestDeckId);
         history.push(`/decks/${latestDeckId}`);
         // history.push("/");
-        // console.log("handle Submit -----------")
+            // console.log("handle Submit -----------")
         } catch(error){
             console.log('CreateDeckFormError: ', error);
+        }
+    }
+
+    async function handleUpdate(){
+        try{
+            await updateDeck({"id":deck.id, ...name, ...description});
+            history.push(`/decks/${deck.id}`);
+        }
+        catch(e){
+            console.log("CreadeDeckForm UpdateDeck Error: ", e);
         }
     }
 
@@ -51,7 +79,7 @@ function CreateDeckForm({decks}){
                 </div>
                 <button type="button" className="btn btn-secondary" onClick={handleCancel}>Cancel</button>
                 <button type="button" className="btn btn-primary ml-1"
-                onClick={handleCreate}>Submit</button>
+                onClick={editFlag ? handleUpdate : handleCreate}>Submit</button>
             </form>
         </div>
     );
