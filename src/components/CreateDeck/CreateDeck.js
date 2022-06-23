@@ -8,7 +8,7 @@ function CreateDeck({decks}){
            <div>
             <NaviLink />
             <h1>Create Deck</h1>
-            <CreateDeckForm decks={decks}/>
+            <CreateDeckForm />
            </div>
         )
     }
