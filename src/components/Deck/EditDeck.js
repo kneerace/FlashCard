@@ -23,7 +23,7 @@ function EditDeck(){
         getDeck();
     },[deckID]);
 
-    console.log('EditDeck deck_outside::::', deck);
+        // console.log('EditDeck deck_outside::::', deck);
 
     const EditDeckNaviLink =()=>{
         return(
