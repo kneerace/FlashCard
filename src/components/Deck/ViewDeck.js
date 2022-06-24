@@ -29,11 +29,13 @@ function ViewDeck(){
 
     const deleteDeckHandler =(event)=>{
         if(window.confirm(`Are you sure to delete this Deck? \n\nYou will not be able to recover it.`)){
-            deleteDeck(deckID);
-            console.log(deckID);
-            history.go(0);
+            async function delDeck(){
+            const response = await deleteDeck(deckID);
+                console.log("ViewDeck delDeck response", response);
+            history.push("/");
+            }
+            delDeck();
         }
-        
     }
 
     const ViewDeckNaviLink = ()=>{
