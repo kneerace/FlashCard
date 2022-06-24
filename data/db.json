@@ -11,24 +11,29 @@
       "id": 2
     },
     {
-      "name": "this ",
-      "description": "that",
+      "name": "Horroscope",
+      "description": "Horroscope for June 24",
       "id": 3
     },
     {
-      "name": "who ",
-      "description": "what",
+      "name": "Solar System",
+      "description": "Solar System planets and moons names",
       "id": 4
     },
     {
-      "name": "i am a new deck",
-      "description": "new description for the new deck ",
+      "name": "this that",
+      "description": "this that",
       "id": 5
     },
     {
-      "id": 6,
-      "name": "Edit deck. tgus ",
-      "description": "this is too big for this  8787656"
+      "id": 7,
+      "name": "Salutation in Nepali Nepalese",
+      "description": "Good morning good day or evening\n"
+    },
+    {
+      "name": "Nepal",
+      "description": "Nepal's ",
+      "id": 8
     }
   ],
   "cards": [
@@ -68,6 +73,168 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "front ",
+      "back": "back",
+      "deckId": 2,
+      "id": 8
+    },
+    {
+      "front": "ARIES (Mar 21-Apr 20)",
+      "back": "Great day ",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "TAURUS (Apr 21-May 20)",
+      "back": "OK OK day today",
+      "deckId": 3,
+      "id": 10
+    },
+    {
+      "front": "GEMINI (May 21-Jun 21)",
+      "back": "wonderful day",
+      "deckId": 3,
+      "id": 11
+    },
+    {
+      "front": "CANCER (Jun 22-Jul 22)",
+      "back": "Good financial management will help ward off an impending financial crunch.",
+      "deckId": 3,
+      "id": 12
+    },
+    {
+      "front": "LEO (Jul 23-Aug 23)",
+      "back": "Monetary gains from various sources will keep the coffers brimming. A helpful junior will take some burden off your shoulders.",
+      "deckId": 3,
+      "id": 13
+    },
+    {
+      "front": "Mercury",
+      "back": "Closest Planet to the Sun.",
+      "deckId": 4,
+      "id": 14
+    },
+    {
+      "front": "Venus",
+      "back": "Earth's twin in the solar system",
+      "deckId": 4,
+      "id": 15
+    },
+    {
+      "front": "Earth",
+      "back": "home planet filled with life",
+      "deckId": 4,
+      "id": 16
+    },
+    {
+      "front": "Mars",
+      "back": "Red Planet",
+      "deckId": 4,
+      "id": 17
+    },
+    {
+      "front": "Jupiter",
+      "back": "Largest planet in solar system",
+      "deckId": 4,
+      "id": 18
+    },
+    {
+      "front": "Saturn",
+      "back": "planet with ring",
+      "deckId": 4,
+      "id": 19
+    },
+    {
+      "front": "Uranus",
+      "back": "tilted planet, tilted sideways",
+      "deckId": 4,
+      "id": 20
+    },
+    {
+      "front": "Neptune",
+      "back": "Blue Planet, Stormy too",
+      "deckId": 4,
+      "id": 21
+    },
+    {
+      "front": "Pluto",
+      "back": "once a planet, now a dwarf planet",
+      "deckId": 4,
+      "id": 22
+    },
+    {
+      "front": "Planet Nine",
+      "back": "Edge planet",
+      "deckId": 4,
+      "id": 23
+    },
+    {
+      "front": "Good Morning ",
+      "back": "Subha Bihani",
+      "deckId": 7,
+      "id": 24
+    },
+    {
+      "id": 25,
+      "deckId": 7,
+      "front": "Good eveningffffff",
+      "back": "Subha Sanjha"
+    },
+    {
+      "id": 26,
+      "deckId": 7,
+      "front": "Good Night fgr",
+      "back": "Subha Ratri dedee"
+    },
+    {
+      "id": 27,
+      "deckId": 7,
+      "front": "Good Day to you ",
+      "back": "Subha Din"
+    },
+    {
+      "id": 28,
+      "deckId": 7,
+      "front": "Hello/Hi",
+      "back": "Namaste/Namaskar"
+    },
+    {
+      "id": 29,
+      "deckId": 7,
+      "front": "terere",
+      "back": "fsfadsfasdf"
+    },
+    {
+      "id": 30,
+      "deckId": 7,
+      "front": "tettt",
+      "back": "this is back of the card"
+    },
+    {
+      "id": 31,
+      "deckId": 7,
+      "front": "last front last front last front",
+      "back": "last back. ho ni "
+    },
+    {
+      "id": 32,
+      "deckId": 7,
+      "front": "thst fdfdfdfd",
+      "back": "lllthat fdfdfdfd"
+    },
+    {
+      "front": "nothing ",
+      "back": "nothing back",
+      "deckId": 7,
+      "id": 33
+    },
+    {
+      "front": "You are Welcome.",
+      "back": "Subhakamana",
+      "deckId": 7,
+      "id": 34
     }
   ]
 }
