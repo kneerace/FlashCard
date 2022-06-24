@@ -6,7 +6,7 @@ import AddCardForm from "./AddCardForm";
 function AddCard(){
 
     const {deckID} = useParams();
-        console.log("AddCard deckID:: ", deckID);
+        // console.log("AddCard deckID:: ", deckID);
     
     const [deck, setDeck] = useState(null);
 
