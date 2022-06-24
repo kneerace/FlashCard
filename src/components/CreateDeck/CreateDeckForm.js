@@ -70,7 +70,7 @@ function CreateDeckForm({deck}){
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input type="text" className="form-control" id="name" value={name.name||""}
-                    placeholder="Deck Name" onChange={handleName} required/>
+                    placeholder="Deck Name" required onChange={handleName} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="description">Description</label>
