@@ -9,31 +9,21 @@ import {listDecks} from "./../utils/api/index";
 import EditDeck from "../components/Deck/EditDeck";
 import StudyDeck from "../components/Deck/StudyDeck";
 import AddCard from "../components/Card/AddCard";
+import EditCard from "../components/Card/EditCard";
 
 
 function Layout() {
 
     // setting up deck, default as blank Array
     const [decks, setDecks] = useState([]);
-
     const abort = new AbortController();
     const {url} = useRouteMatch();
-    // console.log('Layout index path: ', path, ' url:', url)
 
-    //Fetching Decks
-    useEffect(()=>{
-        async function fetchDecks() {
-            try{
-                const response = await listDecks(abort.signal);
-                await setDecks(response);
-                // console.log("fetchDeck response: ", response)
-            }catch(err){
-                console.log('Error: ', err); //-------TODO 
-            }
-                }
-        fetchDecks();
+    useEffect(() => {
+      listDecks(abort.signal).then(setDecks);
     }, [`${url}`]);
 
+      // console.log("LayoutIndex::::decks::::", decks);
 
   return (
     <>
@@ -46,6 +36,9 @@ function Layout() {
           </Route>
           <Route path="/decks/new" >
             <CreateDeck decks={decks}/>
+          </Route>
+          <Route exact path="/decks/:deckID/cards/:cardId/edit">
+            <EditCard />
           </Route>
           <Route path="/decks/:deckID/edit">
             <EditDeck />
