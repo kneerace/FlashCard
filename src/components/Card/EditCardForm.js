@@ -15,7 +15,7 @@ function AddCardForm({deck}){
     useEffect(()=> {
         async function fetchCard(){
             const response = await readCard(cardId,abort.signal);
-            console.log('EditCardForm readCard response:::', response)
+            // console.log('EditCardForm readCard response:::', response)
             setFront({"front":response.front});
             setBack({"back":response.back});
         }
@@ -39,8 +39,8 @@ function AddCardForm({deck}){
     //     history.push(`/decks/${deckID}`);
         
     // }
-    console.log('front', front);
-    console.log('back', back);
+    // console.log('front', front);
+    // console.log('back', back);
 
      function handleUpdate(){
        updateCard({"id":cardId, "deckId":parseInt(deckID), ...front, ...back})

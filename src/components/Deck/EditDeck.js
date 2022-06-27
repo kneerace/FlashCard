@@ -16,8 +16,7 @@ function EditDeck(){
             setDeck(response);
                 // console.log('EditDeck deck::::', deck);
             }
-            catch(e){
-                console.log('EditDeck getDeck error:: ', e);
+            catch(e){ console.log('EditDeck getDeck error:: ', e);
             }
         }
         getDeck();

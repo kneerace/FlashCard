@@ -18,7 +18,7 @@ function AddCardForm({deck}){
     useEffect(()=> {
         async function fetchCard(){
             const response = await readCard(cardId,abort.signal);
-            console.log('EditCardForm readCard response:::', response)
+            // console.log('EditCardForm readCard response:::', response)
             setFront({"front":response.front});
             setBack({"back":response.back});
         }
@@ -31,7 +31,7 @@ function AddCardForm({deck}){
         editAdd();
     },[cardId,pathname]);
 
-        console.log("AddCardform  isEdit::::", isEdit);
+        // console.log("AddCardform  isEdit::::", isEdit);
 
     const handleFront = (event) =>{
         event.preventDefault();

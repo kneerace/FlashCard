@@ -49,8 +49,7 @@ function CreateDeckForm({deck}){
         history.push(`/decks/${latestDeckId}`);
         // history.push("/");
             // console.log("handle Submit -----------")
-        } catch(error){
-            console.log('CreateDeckFormError: ', error);
+        } catch(error){ console.log('CreateDeckFormError: ', error);
         }
     }
 
@@ -59,8 +58,7 @@ function CreateDeckForm({deck}){
             await updateDeck({"id":deck.id, ...name, ...description});
             history.push(`/decks/${deck.id}`);
         }
-        catch(e){
-            console.log("CreadeDeckForm UpdateDeck Error: ", e);
+        catch(e){ console.log("CreadeDeckForm UpdateDeck Error: ", e);
         }
     }
 

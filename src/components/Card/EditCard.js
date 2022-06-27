@@ -9,17 +9,17 @@ function EditCard(){
 
     const [deck, setDeck]=useState(null);
     const {path, url} = useRouteMatch();
-    console.log("EditCard :: url", url, ' path:::', path);
+    // console.log("EditCard :: url", url, ' path:::', path);
 
     const {deckID, cardId} = useParams();
-    console.log("EditCard useParams deckID::::",deckID, ': cardId:: ', cardId);
+    // console.log("EditCard useParams deckID::::",deckID, ': cardId:: ', cardId);
 
     const abort = new AbortController();
     useEffect(() => {
         readDeck(deckID,abort.signal).then(setDeck);
       }, [deckID]);
 
-      console.log("EditCard readDeck deck::::",deck);
+    //   console.log("EditCard readDeck deck::::",deck);
 
     if (deck){
     const EditCardNaviLink = ()=>{

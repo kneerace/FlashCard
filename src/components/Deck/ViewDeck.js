@@ -19,8 +19,7 @@ function ViewDeck(){
           const response = await readDeck(deckID);
           setDeck(response);
         //   console.log('Inside getDeck response: ', response)
-            }catch(e){
-                console.log("getDeck Error: ", e)
+            }catch(e){ console.log("getDeck Error: ", e)
             }
         }
         getDeck();
