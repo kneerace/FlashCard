@@ -235,6 +235,30 @@
       "back": "Subhakamana",
       "deckId": 7,
       "id": 34
+    },
+    {
+      "front": "Language",
+      "back": "Nepali",
+      "deckId": 8,
+      "id": 35
+    },
+    {
+      "front": "National Flower",
+      "back": "Rhododendron",
+      "deckId": 8,
+      "id": 36
+    },
+    {
+      "front": "National Language",
+      "back": "Nepali",
+      "deckId": 8,
+      "id": 37
+    },
+    {
+      "front": "National Dress",
+      "back": "Male - Daura Suruwal\nFeMale - Gunyo Cholo",
+      "deckId": 8,
+      "id": 38
     }
   ]
 }
