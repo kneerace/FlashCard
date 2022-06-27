@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useRouteMatch } from "react-router-dom";
 import { readDeck } from "../../utils/api";
-import EditCardForm from "./EditCardForm";
+import AddCardForm from "./AddCardForm";
+// import EditCardForm from "./EditCardForm";
 
 
 function EditCard(){
@@ -37,7 +38,8 @@ function EditCard(){
         <>
             <EditCardNaviLink />
             <h1>Edit Card</h1>
-            <EditCardForm deck={deck} />
+            {/* <EditCardForm deck={deck} /> */}
+            <AddCardForm deck={deck}/>
         </>
     )
 }
