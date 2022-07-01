@@ -16,12 +16,13 @@ function Layout() {
 
     // setting up deck, default as blank Array
     const [decks, setDecks] = useState([]);
-    const abort = new AbortController();
+    
     const {url} = useRouteMatch();
 
     useEffect(() => {
-      listDecks(abort.signal).then(setDecks);
-    }, [`${url}`]);
+      listDecks().then(setDecks);
+
+    }, [url]);
 
       // console.log("LayoutIndex::::decks::::", decks);
 

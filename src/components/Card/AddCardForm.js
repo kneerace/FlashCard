@@ -13,11 +13,9 @@ function AddCardForm({deck}){
     const [back, setBack] = useState({"back":""});
     const [isEdit, setIsEdit] = useState(false);
 
-
-    const abort = new AbortController()
     useEffect(()=> {
         async function fetchCard(){
-            const response = await readCard(cardId,abort.signal);
+            const response = await readCard(cardId);
             // console.log('EditCardForm readCard response:::', response)
             setFront({"front":response.front});
             setBack({"back":response.back});

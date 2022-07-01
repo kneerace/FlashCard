@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useRouteMatch } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { readDeck } from "../../utils/api";
 import AddCardForm from "./AddCardForm";
 // import EditCardForm from "./EditCardForm";
@@ -8,15 +8,14 @@ import AddCardForm from "./AddCardForm";
 function EditCard(){
 
     const [deck, setDeck]=useState(null);
-    const {path, url} = useRouteMatch();
     // console.log("EditCard :: url", url, ' path:::', path);
 
     const {deckID, cardId} = useParams();
     // console.log("EditCard useParams deckID::::",deckID, ': cardId:: ', cardId);
 
-    const abort = new AbortController();
     useEffect(() => {
-        readDeck(deckID,abort.signal).then(setDeck);
+        readDeck(deckID).then(setDeck);
+
       }, [deckID]);
 
     //   console.log("EditCard readDeck deck::::",deck);

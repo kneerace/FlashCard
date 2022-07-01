@@ -259,6 +259,24 @@
       "back": "Male - Daura Suruwal\nFeMale - Gunyo Cholo",
       "deckId": 8,
       "id": 38
+    },
+    {
+      "front": "front side",
+      "back": "back side",
+      "deckId": 5,
+      "id": 39
+    },
+    {
+      "front": "front front",
+      "back": "back back",
+      "deckId": 5,
+      "id": 40
+    },
+    {
+      "front": "front front front",
+      "back": "back back back",
+      "deckId": 5,
+      "id": 41
     }
   ]
 }

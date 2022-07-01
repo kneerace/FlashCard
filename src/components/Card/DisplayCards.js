@@ -23,7 +23,7 @@ function DisplayCards({deckID}){
         const cardid = event.target.id;
         if(window.confirm("Delete thi card?\n\nYou will not be able to recover it.")){
             deleteCard(event.target.id);
-            const newCards = cards.filter((item)=> item.id != cardid);
+            const newCards = cards.filter((item)=> item.id !== cardid);
             setCards(newCards);
             // setCards(current=> {
             //     return current.filter((item)=>item.id != cardid)
